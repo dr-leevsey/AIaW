@@ -102,12 +102,12 @@ asinh x  | Hyperbolic arc sine of x (in radians)
 atan x   | Arc tangent of x (in radians)
 atanh x  | Hyperbolic arc tangent of x (in radians)
 cbrt x   | Cube root of x
-ceil x   | Ceiling of x — the smallest integer that’s >= x
+ceil x   | Ceiling of x — the smallest integer that's >= x
 cos x    | Cosine of x (x is in radians)
 cosh x   | Hyperbolic cosine of x (x is in radians)
 exp x    | e^x (exponential/antilogarithm function with base e)
 expm1 x  | e^x - 1
-floor x  | Floor of x — the largest integer that’s <= x
+floor x  | Floor of x — the largest integer that's <= x
 length x | String or array length of x
 ln x     | Natural logarithm of x
 log x    | Natural logarithm of x (synonym for ln, not base-10)
@@ -380,7 +380,7 @@ function buildMcpPlugin(dump: McpPluginDump, available: boolean): Plugin {
           }
         } else {
           // type: 'resource'
-          return resourceToResultItem(i.resource)
+          return resourceToResultItem(i.resource, (i.resource as { uri: string }).uri)
         }
       })
     }
@@ -433,7 +433,7 @@ function buildMcpPlugin(dump: McpPluginDump, available: boolean): Plugin {
             }
           } else {
             // type: 'resource'
-            return resourceToResultItem(content.resource, content.resource.uri)
+            return resourceToResultItem(content.resource, (content.resource as { uri: string }).uri)
           }
         })
       }
