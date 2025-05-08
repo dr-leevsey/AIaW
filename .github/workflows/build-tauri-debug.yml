@@ -1,3 +1,4 @@
+# Workflow for building debug versions of the Tauri application
 name: 'Build Tauri Debug'
 
 on:
